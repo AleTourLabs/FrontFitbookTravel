@@ -6,8 +6,8 @@ export function extract(value, { format }) {
         return {};
     const keys = Object.keys(format({}));
     return keys.reduce((data, key) => {
+        // rome-ignore lint/suspicious/noPrototypeBuiltins:
         if (value?.hasOwnProperty(key)) {
-            ;
             data[key] = value[key];
         }
         return data;

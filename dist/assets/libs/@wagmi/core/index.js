@@ -62,7 +62,7 @@ import {
 import {
   mainnet,
   sepolia
-} from "./chunk-D7TYCC3T.js";
+} from "./chunk-OKTWTVYS.js";
 import {
   Connector
 } from "./chunk-BVC4KGLQ.js";

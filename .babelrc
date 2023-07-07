@@ -1,0 +1,4 @@
+{
+    "presets": ["@babel/preset-env"], //Babel detecte el codigo y compile a javascript standar
+    "plugins": ["@babel/plugin-transform-modules-commonjs"]
+}

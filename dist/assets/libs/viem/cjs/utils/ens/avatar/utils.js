@@ -119,7 +119,8 @@ async function parseAvatarUri({ gatewayUrls, uri, }) {
     throw new ens_js_1.EnsAvatarUriResolutionError({ uri });
 }
 exports.parseAvatarUri = parseAvatarUri;
-function parseNftUri(uri) {
+function parseNftUri(uri_) {
+    let uri = uri_;
     if (uri.startsWith('did:nft:')) {
         uri = uri.replace('did:nft:', '').replace(/_/g, '/');
     }

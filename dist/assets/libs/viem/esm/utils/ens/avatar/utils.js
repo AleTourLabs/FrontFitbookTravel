@@ -20,6 +20,7 @@ export async function isImageUri(uri) {
             return false;
         }
         // fail in NodeJS, since the error is not cors but any other network issue
+        // rome-ignore lint/suspicious/noPrototypeBuiltins:
         if (!globalThis.hasOwnProperty('Image'))
             return false;
         // in case of cors, use image api to validate if given url is an actual image
@@ -117,7 +118,8 @@ export async function parseAvatarUri({ gatewayUrls, uri, }) {
         return resolvedURI;
     throw new EnsAvatarUriResolutionError({ uri });
 }
-export function parseNftUri(uri) {
+export function parseNftUri(uri_) {
+    let uri = uri_;
     // parse valid nft spec (CAIP-22/CAIP-29)
     // @see: https://github.com/ChainAgnostic/CAIPs/tree/master/CAIPs
     if (uri.startsWith('did:nft:')) {

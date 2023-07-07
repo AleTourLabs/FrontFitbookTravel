@@ -7,7 +7,6 @@ function extract(value, { format }) {
     const keys = Object.keys(format({}));
     return keys.reduce((data, key) => {
         if (value?.hasOwnProperty(key)) {
-            ;
             data[key] = value[key];
         }
         return data;

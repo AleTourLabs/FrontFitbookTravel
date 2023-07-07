@@ -19,7 +19,7 @@ export async function prepareRequest(client, args) {
             address: account.address,
             blockTag: 'pending',
         });
-    if (block.baseFeePerGas) {
+    if (typeof block.baseFeePerGas === 'bigint') {
         if (typeof gasPrice !== 'undefined')
             throw new BaseError('Chain does not support legacy `gasPrice`.');
         // EIP-1559 fees

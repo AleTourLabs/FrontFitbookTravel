@@ -22,7 +22,7 @@ async function prepareRequest(client, args) {
             address: account.address,
             blockTag: 'pending',
         });
-    if (block.baseFeePerGas) {
+    if (typeof block.baseFeePerGas === 'bigint') {
         if (typeof gasPrice !== 'undefined')
             throw new base_js_1.BaseError('Chain does not support legacy `gasPrice`.');
         if (typeof maxFeePerGas === 'undefined') {
