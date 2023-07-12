@@ -1,4 +1,4 @@
-// const browsersync = require('browser-sync').create();
+const browsersync = require('browser-sync').create();
 const cached = require('gulp-cached');
 const cleanCSS = require('clean-css');
 const cssnano = require('gulp-cssnano');
@@ -16,15 +16,7 @@ const sourcemaps = require("gulp-sourcemaps");
 const postcss = require('gulp-postcss');
 const autoprefixer = require("autoprefixer");
 const tailwindcss = require('tailwindcss');
-const babel = require('gulp-babel');
 
-gulp.task('scripts', function () {
-  return gulp.src('src/assets/js/wallet_connect.js')
-    .pipe(babel())
-    .pipe(gulp.dest('dist/assets/js'));
-});
-
-gulp.task('default', gulp.series('scripts'));
 
 const paths = {
     config: {
@@ -93,29 +85,27 @@ const paths = {
     }
 };
 
-// gulp.task('browsersync', function (callback) {
-//     browsersync.init({
-//         server: {
-//             baseDir: [paths.dist.base.dir, paths.src.base.dir, paths.base.base.dir]
-//         },
-//         open: false,
-//     });
+gulp.task('browsersync', function (callback) {
+    browsersync.init({
+        server: {
+            baseDir: [paths.dist.base.dir, paths.src.base.dir, paths.base.base.dir]
+        },
+    });
+    callback();
+});
 
-//     callback();
-// });
+gulp.task('browsersyncReload', function (callback) {
+    browsersync.reload();
+    callback();
+});
 
-// gulp.task('browsersyncReload', function (callback) {
-//     browsersync.reload();
-//     callback();
-// });
-
-// gulp.task('watch', function () {
-//     gulp.watch([paths.src.scss.files, '!' + paths.src.scss.icon], gulp.series('scss', 'browsersyncReload'));
-//     gulp.watch(paths.src.scss.icon, gulp.series('icons', 'browsersyncReload'));
-//     gulp.watch([paths.src.js.dir], gulp.series('js', 'browsersyncReload'));
-//     gulp.watch([paths.src.js.pages], gulp.series('jsPages', 'browsersyncReload'));
-//     gulp.watch([paths.src.html.files, paths.src.partials.files], gulp.series(['fileinclude', 'scss'], 'browsersyncReload'));
-// });
+gulp.task('watch', function () {
+    gulp.watch([paths.src.scss.files, '!' + paths.src.scss.icon], gulp.series('scss', 'browsersyncReload'));
+    gulp.watch(paths.src.scss.icon, gulp.series('icons', 'browsersyncReload'));
+    gulp.watch([paths.src.js.dir], gulp.series('js', 'browsersyncReload'));
+    gulp.watch([paths.src.js.pages], gulp.series('jsPages', 'browsersyncReload'));
+    gulp.watch([paths.src.html.files, paths.src.partials.files], gulp.series(['fileinclude', 'scss'], 'browsersyncReload'));
+});
 
 gulp.task('js', function () {
     return gulp
@@ -251,7 +241,7 @@ gulp.task('html', function () {
 });
 
 // Default(Producation) Task
-// gulp.task('default', gulp.series(gulp.parallel('clean:packageLock', 'clean:dist', 'copy:all', 'copy:libs', 'fileinclude', 'scss', 'icons', 'js', 'jsPages', 'html'), gulp.parallel('browsersync', 'watch')));
+gulp.task('default', gulp.series(gulp.parallel('clean:packageLock', 'clean:dist', 'copy:all', 'copy:libs', 'fileinclude', 'scss', 'icons', 'js', 'jsPages', 'html'), gulp.parallel('browsersync', 'watch')));
 
 // Build(Development) Task
 gulp.task('build', gulp.series('clean:packageLock', 'clean:dist', 'copy:all', 'copy:libs', 'fileinclude', 'scss', 'icons', 'js', 'jsPages', 'html'));

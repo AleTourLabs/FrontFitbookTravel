@@ -4,39 +4,38 @@ import {
   w3mProvider,
   WagmiCore,
   WagmiCoreChains,
-  WagmiCoreConnectors
-} from 'https://unpkg.com/@web3modal/ethereum'
+  WagmiCoreConnectors,
+} from "https://unpkg.com/@web3modal/ethereum@2.6.2";
 
-import { Web3Modal } from 'https://unpkg.com/@web3modal/html'
+import { Web3Modal } from "https://unpkg.com/@web3modal/html@2.6.2";
 
-// Equivalent to importing from @wagmi/core
-const { configureChains, createConfig, getAccount } = WagmiCore
+// 0. Import wagmi dependencies
+const { mainnet, polygon, avalanche, arbitrum } = WagmiCoreChains;
+const { configureChains, createConfig } = WagmiCore;
 
-// Equivalent to importing from @wagmi/core/chains
-const { mainnet, polygon, avalanche, arbitrum } = WagmiCoreChains
-
-// Equivalent to importing from @wagmi/core/providers
-const { CoinbaseWalletConnector } = WagmiCoreConnectors
-
-// 1. Define constants
-const projectId = "e7ad9f110adcbf20665d0b8f72e026ae";
-if (!projectId) {
-  throw new Error("You need to provide VITE_PROJECT_ID env variable");
-}
-
+// 1. Define chains
 const chains = [mainnet, polygon, avalanche, arbitrum];
+const projectId = "e7ad9f110adcbf20665d0b8f72e026ae";
 
 // 2. Configure wagmi client
 const { publicClient } = configureChains(chains, [w3mProvider({ projectId })]);
 const wagmiConfig = createConfig({
   autoConnect: true,
-  connectors: w3mConnectors({ chains, version: 1, projectId }),
+  connectors: [
+    ...w3mConnectors({ chains, version: 2, projectId }),
+    new WagmiCoreConnectors.CoinbaseWalletConnector({
+      chains,
+      options: {
+        appName: "Fitbook Travel",
+      },
+    }),
+  ],
   publicClient,
 });
 
 // 3. Create ethereum and modal clients
 const ethereumClient = new EthereumClient(wagmiConfig, chains);
-const web3Modal = new Web3Modal(
+export const web3Modal = new Web3Modal(
   {
     projectId,
     walletImages: {
@@ -45,6 +44,7 @@ const web3Modal = new Web3Modal(
   },
   ethereumClient
 );
+
 
 web3Modal.setTheme({
   themeMode: 'dark',
@@ -55,23 +55,4 @@ web3Modal.setTheme({
     // ...
   }
 });
-console.log(getAccount());
-// Función asincrónica para obtener la dirección de la wallet conectada
-// async function getAddress() {
-//   const provider = await web3Modal.connectTo('ethereum');
-//   if (provider) {
-//     const web3 = new Web3(provider);
-//     const accounts = await web3.eth.getAccounts();
-//     const address = accounts[0];
 
-//     console.log('Dirección del usuario:', address);
-//     return address;
-//   } else {
-//     console.log('El usuario no está conectado');
-//     return null;
-//   }
-// }
-
-// getAddress();
-
-export default web3Modal;

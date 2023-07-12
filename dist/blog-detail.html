@@ -12,6 +12,7 @@
 
     <!-- favicon -->
     <link rel="shortcut icon" href="assets/images/logo/FitbookChainIcon.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.css" />
 
     <!-- Css -->
     <!-- Main Css -->
@@ -98,14 +99,14 @@
     <div class="absolute inset-0 dark:bg-black opacity-80 bg-slate-400"></div>
     <div class="container relative">
         <div class="grid grid-cols-1 pb-8 text-center mt-10">
-            <h3 class="mb-3 text-3xl leading-normal font-medium text-white">My Very Minimal <br> Interior Design Ideas
+            <h3 class="mb-3 text-3xl leading-normal font-medium text-white" id="title_project">
             </h3>
 
             <ul class="list-none mt-6">
-                <li class="inline-block font-semibold text-white/50 mx-5"> <span class="text-white block">Client
-                        :</span> <span class="block">Calvin Carlo</span></li>
+                <li class="inline-block font-semibold text-white/50 mx-5"> <span class="text-white block">Creator
+                        :</span> <span class="block" id="creator_project">Calvin Carlo</span></li>
                 <li class="inline-block font-semibold text-white/50 mx-5"> <span class="text-white block">Date :</span>
-                    <span class="block">23th May, 2022</span>
+                    <span class="block" id="date_init_project"></span>
                 </li>
                 <li class="inline-block font-semibold text-white/50 mx-5"> <span class="text-white block">Time :</span>
                     <span class="block">8 Min Read</span>
@@ -120,10 +121,12 @@
         <ul class="breadcrumb tracking-[0.5px] breadcrumb-light mb-0 inline-block">
             <li
                 class="inline breadcrumb-item uppercase text-[13px] font-bold duration-500 ease-in-out dark:text-white/50 dark:hover:text-white text-black/50 hover:text-indigo-600">
-                <a href="index.html">HOME</a></li>
+                <a href="index.html">HOME</a>
+            </li>
             <li
                 class="inline breadcrumb-item uppercase text-[13px] font-bold duration-500 ease-in-out dark:text-white/50 dark:hover:text-white text-black/50 hover:text-indigo-600">
-                <a href="nft-explore.html">Explore Projects</a></li>
+                <a href="nft-explore.html">Explore Projects</a>
+            </li>
             <li class="inline breadcrumb-item uppercase text-[13px] font-bold duration-500 ease-in-out dark:text-white text-black hover:text-indigo-600"
                 aria-current="page">Project</li>
         </ul>
@@ -150,126 +153,25 @@
                     <img src="assets/images/blog/slide02.jpg" class="rounded-md" alt="">
 
                     <div class="mt-6">
-                        <p class="text-slate-400">The most well-known dummy text is the 'Lorem Ipsum', which is said to
-                            have originated in the 16th century. Lorem Ipsum is composed in a pseudo-Latin language
-                            which more or less corresponds to 'proper' Latin. It contains a series of real Latin words.
-                            This ancient dummy text is also incomprehensible, but it imitates the rhythm of most
-                            European languages in Latin script.</p>
-                        <p
+                        <p class="text-slate-400" id="description_project"></p>
+                        <!-- <p
                             class="text-slate-400 italic border-x-4 border-indigo-600 rounded-ss-xl rounded-ee-xl mt-3 p-3">
                             " There are many variations of passages of Lorem Ipsum available, but the majority have
                             suffered alteration in some form, by injected humour, or randomised words which don't look
                             even slightly believable. "</p>
                         <p class="text-slate-400 mt-3">The advantage of its Latin origin and the relative
                             meaninglessness of Lorum Ipsum is that the text does not attract attention to itself or
-                            distract the viewer's attention from the layout.</p>
+                            distract the viewer's attention from the layout.</p> -->
                     </div>
                 </div>
 
-                <div class="p-6 rounded-md shadow dark:shadow-gray-800 mt-8">
-                    <h5 class="text-lg font-semibold">Comments:</h5>
-
-                    <div class="mt-8">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <img src="assets/images/client/01.jpg" class="h-11 w-11 rounded-full shadow" alt="">
-
-                                <div class="ms-3 flex-1">
-                                    <a href=""
-                                        class="text-lg font-semibold hover:text-indigo-600 transition-all duration-500 ease-in-out">Calvin
-                                        Carlo</a>
-                                    <p class="text-sm text-slate-400">6th May 2022 at 01:25 pm</p>
-                                </div>
-                            </div>
-
-                            <a href=""
-                                class="text-slate-400 hover:text-indigo-600 transition-all duration-500 ease-in-out ms-5"><i
-                                    class="mdi mdi-reply"></i> Reply</a>
-                        </div>
-                        <div class="p-4 bg-gray-50 dark:bg-slate-800 rounded-md shadow dark:shadow-gray-800 mt-6">
-                            <p class="text-slate-400 italic">" There are many variations of passages of Lorem Ipsum
-                                available, but the majority have suffered alteration in some form, by injected humour "
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="mt-8">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <img src="assets/images/client/02.jpg" class="h-11 w-11 rounded-full shadow" alt="">
-
-                                <div class="ms-3 flex-1">
-                                    <a href=""
-                                        class="text-lg font-semibold hover:text-indigo-600 transition-all duration-500 ease-in-out">Calvin
-                                        Carlo</a>
-                                    <p class="text-sm text-slate-400">6th May 2022 at 01:25 pm</p>
-                                </div>
-                            </div>
-
-                            <a href=""
-                                class="text-slate-400 hover:text-indigo-600 transition-all duration-500 ease-in-out ms-5"><i
-                                    class="mdi mdi-reply"></i> Reply</a>
-                        </div>
-                        <div class="p-4 bg-gray-50 dark:bg-slate-800 rounded-md shadow dark:shadow-gray-800 mt-6">
-                            <p class="text-slate-400 italic">" There are many variations of passages of Lorem Ipsum
-                                available, but the majority have suffered alteration in some form, by injected humour "
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="mt-8">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <img src="assets/images/client/03.jpg" class="h-11 w-11 rounded-full shadow" alt="">
-
-                                <div class="ms-3 flex-1">
-                                    <a href=""
-                                        class="text-lg font-semibold hover:text-indigo-600 transition-all duration-500 ease-in-out">Calvin
-                                        Carlo</a>
-                                    <p class="text-sm text-slate-400">6th May 2022 at 01:25 pm</p>
-                                </div>
-                            </div>
-
-                            <a href=""
-                                class="text-slate-400 hover:text-indigo-600 transition-all duration-500 ease-in-out ms-5"><i
-                                    class="mdi mdi-reply"></i> Reply</a>
-                        </div>
-                        <div class="p-4 bg-gray-50 dark:bg-slate-800 rounded-md shadow dark:shadow-gray-800 mt-6">
-                            <p class="text-slate-400 italic">" There are many variations of passages of Lorem Ipsum
-                                available, but the majority have suffered alteration in some form, by injected humour "
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="mt-8">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <img src="assets/images/client/04.jpg" class="h-11 w-11 rounded-full shadow" alt="">
-
-                                <div class="ms-3 flex-1">
-                                    <a href=""
-                                        class="text-lg font-semibold hover:text-indigo-600 transition-all duration-500 ease-in-out">Calvin
-                                        Carlo</a>
-                                    <p class="text-sm text-slate-400">6th May 2022 at 01:25 pm</p>
-                                </div>
-                            </div>
-
-                            <a href=""
-                                class="text-slate-400 hover:text-indigo-600 transition-all duration-500 ease-in-out ms-5"><i
-                                    class="mdi mdi-reply"></i> Reply</a>
-                        </div>
-                        <div class="p-4 bg-gray-50 dark:bg-slate-800 rounded-md shadow dark:shadow-gray-800 mt-6">
-                            <p class="text-slate-400 italic">" There are many variations of passages of Lorem Ipsum
-                                available, but the majority have suffered alteration in some form, by injected humour "
-                            </p>
-                        </div>
-                    </div>
+                <div class="p-6 rounded-md shadow dark:shadow-gray-800 mt-8" id="comments_section">
                 </div>
 
                 <div class="p-6 rounded-md shadow dark:shadow-gray-800 mt-8">
                     <h5 class="text-lg font-semibold">Leave A Comment:</h5>
 
-                    <form class="mt-8">
+                    <form class="mt-8" id="create_comment">
                         <div class="grid lg:grid-cols-12 lg:gap-6">
                             <div class="lg:col-span-6 mb-5">
                                 <div class="text-start">
@@ -309,254 +211,36 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" id="submit" name="send"
+                        <button id="submit"
                             class="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md w-full">Send
-                            Message</button>
+                            Comment</button>
                     </form>
                 </div>
             </div>
 
             <div class="lg:col-span-4 md:col-span-6">
+
                 <div class="sticky top-20">
+                    <h5 style="cursor: pointer;" id="love_project"
+                        class="text-lg font-semibold bg-gray-50 dark:bg-purple-600 shadow dark:shadow-gray-800 rounded-full p-2 text-center mt-5 mb-5">
+                        Love it
+                        <i class="mdi mdi-heart w-24 h-24 text-red-600/20 text-red-700 "></i>
+                    </h5>
+
                     <h5
                         class="text-lg font-semibold bg-gray-50 dark:bg-slate-800 shadow dark:shadow-gray-800 rounded-md p-2 text-center">
                         Recent votes</h5>
                     <div class="text-center mt-8">
-                        <div class="border-y border-skin-border bg-skin-block-bg text-base md:rounded-xl md:border">
-                            <div
-                                class="group flex h-[57px] justify-between rounded-t-none border-b border-skin-border px-4 pb-[12px] pt-3 md:rounded-t-lg">
-                                <h4 class="flex items-center">
-                                    <div class="font-semibold hover:text-indigo-600">Votes <span
-                                            class="text-sm text-slate-400 px-2">
-                                            369,729</span></div>
-                                    <!---->
-                                </h4>
-                                <div class="flex items-center">
-                                    <!---->
-                                </div>
-                                <!---->
-                                <!---->
-                            </div>
-                            <!---->
-                            <div class="leading-5 sm:leading-6">
-                                <div class="flex items-center gap-3 border-t px-3 py-[14px] !border-0"
-                                    data-testid="proposal-votes-list-item-0">
-                                    <div data-headlessui-state=""><button id="headlessui-popover-button-516"
-                                            type="button" aria-expanded="false" data-headlessui-state=""><a
-                                                href="#/profile/0xCff5be1cf3C7Cfe073Ade82d1dC27be33c998D6e"
-                                                class="whitespace-nowrap" tabindex="-1">
-                                                <div
-                                                    class="w-[110px] min-w-[110px] xs:w-[130px] xs:min-w-[130px] text-left flex flex-nowrap items-center space-x-1">
-                                                    <span class="flex shrink-0 items-center justify-center"><img
-                                                            class="rounded-full bg-skin-border object-cover"
-                                                            alt="avatar"
-                                                            style="width: 18px; height: 18px; min-width: 18px; display: none;"><img
-                                                            src="https://cdn.stamp.fyi/avatar/eth:0xCff5be1cf3C7Cfe073Ade82d1dC27be33c998D6e?s=36"
-                                                            class="rounded-full bg-skin-border object-cover"
-                                                            alt="avatar"
-                                                            style="width: 18px; height: 18px; min-width: 18px;">
-                                                        <!---->
-                                                    </span><span
-                                                        class="w-full cursor-pointer truncate text-skin-link">0xCff5...8D6e</span>
-                                                    <!---->
-                                                </div>
-                                            </a></button>
-                                        <!---->
-                                    </div>
-                                    <div class="flex-auto truncate px-2 text-center text-skin-link">
-                                        <div class="truncate text-end text-skin-link">Love it <i
-                                                class="mdi mdi-heart btn btn-icon text-lg bg-white dark:bg-slate-900 border-0 shadow dark:shadow-gray-800 rounded-full text-red-600/20 text-red-700 "></i>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="flex items-center gap-3 border-t px-3 py-[14px]"
-                                    data-testid="proposal-votes-list-item-1">
-                                    <div data-headlessui-state=""><button id="headlessui-popover-button-523"
-                                            type="button" aria-expanded="false" data-headlessui-state=""><a
-                                                href="#/profile/0x63e10765c0ba977e070C73C833b240cb4a5090E0"
-                                                class="whitespace-nowrap" tabindex="-1">
-                                                <div
-                                                    class="w-[110px] min-w-[110px] xs:w-[130px] xs:min-w-[130px] text-left flex flex-nowrap items-center space-x-1">
-                                                    <span class="flex shrink-0 items-center justify-center"><img
-                                                            class="rounded-full bg-skin-border object-cover"
-                                                            alt="avatar"
-                                                            style="width: 18px; height: 18px; min-width: 18px; display: none;"><img
-                                                            src="https://cdn.stamp.fyi/avatar/eth:0x63e10765c0ba977e070C73C833b240cb4a5090E0?s=36"
-                                                            class="rounded-full bg-skin-border object-cover"
-                                                            alt="avatar"
-                                                            style="width: 18px; height: 18px; min-width: 18px;">
-                                                        <!---->
-                                                    </span><span
-                                                        class="w-full cursor-pointer truncate text-skin-link">0x63e1...90E0</span>
-                                                    <!---->
-                                                </div>
-                                            </a></button>
-                                        <!---->
-                                    </div>
-                                    <div class="flex-auto truncate px-2 text-center text-skin-link">
-                                        <div class="truncate text-end text-skin-link">Love it <i
-                                                class="mdi mdi-heart btn btn-icon text-lg bg-white dark:bg-slate-900 border-0 shadow dark:shadow-gray-800 rounded-full text-red-600/20 text-red-700 "></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-3 border-t px-3 py-[14px]"
-                                    data-testid="proposal-votes-list-item-2">
-                                    <div data-headlessui-state=""><button id="headlessui-popover-button-530"
-                                            type="button" aria-expanded="false" data-headlessui-state=""><a
-                                                href="#/profile/0xe0B2ADd5C2d094008d014369ab6bc5c42cF3ACAd"
-                                                class="whitespace-nowrap" tabindex="-1">
-                                                <div
-                                                    class="w-[110px] min-w-[110px] xs:w-[130px] xs:min-w-[130px] text-left flex flex-nowrap items-center space-x-1">
-                                                    <span class="flex shrink-0 items-center justify-center"><img
-                                                            class="rounded-full bg-skin-border object-cover"
-                                                            alt="avatar"
-                                                            style="width: 18px; height: 18px; min-width: 18px; display: none;"><img
-                                                            src="https://cdn.stamp.fyi/avatar/eth:0xe0B2ADd5C2d094008d014369ab6bc5c42cF3ACAd?s=36"
-                                                            class="rounded-full bg-skin-border object-cover"
-                                                            alt="avatar"
-                                                            style="width: 18px; height: 18px; min-width: 18px;">
-                                                        <!---->
-                                                    </span><span
-                                                        class="w-full cursor-pointer truncate text-skin-link">nobleauch.eth</span>
-                                                    <!---->
-                                                </div>
-                                            </a></button>
-                                        <!---->
-                                    </div>
-                                    <div class="flex-auto truncate px-2 text-center text-skin-link">
-                                        <div class="truncate text-end text-skin-link">Love it <i
-                                                class="mdi mdi-heart btn btn-icon text-lg bg-white dark:bg-slate-900 border-0 shadow dark:shadow-gray-800 rounded-full text-red-600/20 text-red-700 "></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-3 border-t px-3 py-[14px]"
-                                    data-testid="proposal-votes-list-item-3">
-                                    <div data-headlessui-state=""><button id="headlessui-popover-button-537"
-                                            type="button" aria-expanded="false" data-headlessui-state=""><a
-                                                href="#/profile/0xac6eaBaF34F3eb8e753b65a4fb27D799EA183650"
-                                                class="whitespace-nowrap" tabindex="-1">
-                                                <div
-                                                    class="w-[110px] min-w-[110px] xs:w-[130px] xs:min-w-[130px] text-left flex flex-nowrap items-center space-x-1">
-                                                    <span class="flex shrink-0 items-center justify-center"><img
-                                                            class="rounded-full bg-skin-border object-cover"
-                                                            alt="avatar"
-                                                            style="width: 18px; height: 18px; min-width: 18px; display: none;"><img
-                                                            src="https://cdn.stamp.fyi/avatar/eth:0xac6eaBaF34F3eb8e753b65a4fb27D799EA183650?s=36"
-                                                            class="rounded-full bg-skin-border object-cover"
-                                                            alt="avatar"
-                                                            style="width: 18px; height: 18px; min-width: 18px;">
-                                                        <!---->
-                                                    </span><span
-                                                        class="w-full cursor-pointer truncate text-skin-link">0xac6e...3650</span>
-                                                    <!---->
-                                                </div>
-                                            </a></button>
-                                        <!---->
-                                    </div>
-                                    <div class="flex-auto truncate px-2 text-center text-skin-link">
-                                        <div class="truncate text-end text-skin-link">Love it <i
-                                                class="mdi mdi-heart btn btn-icon text-lg bg-white dark:bg-slate-900 border-0 shadow dark:shadow-gray-800 rounded-full text-red-600/20 text-red-700 "></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-3 border-t px-3 py-[14px]"
-                                    data-testid="proposal-votes-list-item-4">
-                                    <div data-headlessui-state=""><button id="headlessui-popover-button-544"
-                                            type="button" aria-expanded="false" data-headlessui-state=""><a
-                                                href="#/profile/0x465045e5FB8f4A7b94ed2eFDe0F5ec734B8f942A"
-                                                class="whitespace-nowrap" tabindex="-1">
-                                                <div
-                                                    class="w-[110px] min-w-[110px] xs:w-[130px] xs:min-w-[130px] text-left flex flex-nowrap items-center space-x-1">
-                                                    <span class="flex shrink-0 items-center justify-center"><img
-                                                            class="rounded-full bg-skin-border object-cover"
-                                                            alt="avatar"
-                                                            style="width: 18px; height: 18px; min-width: 18px; display: none;"><img
-                                                            src="https://cdn.stamp.fyi/avatar/eth:0x465045e5FB8f4A7b94ed2eFDe0F5ec734B8f942A?s=36"
-                                                            class="rounded-full bg-skin-border object-cover"
-                                                            alt="avatar"
-                                                            style="width: 18px; height: 18px; min-width: 18px;">
-                                                        <!---->
-                                                    </span><span
-                                                        class="w-full cursor-pointer truncate text-skin-link">0x4650...942A</span>
-                                                    <!---->
-                                                </div>
-                                            </a></button>
-                                        <!---->
-                                    </div>
-                                    <div class="flex-auto truncate px-2 text-center text-skin-link">
-                                        <div class="truncate text-end text-skin-link">Love it <i
-                                                class="mdi mdi-heart btn btn-icon text-lg bg-white dark:bg-slate-900 border-0 shadow dark:shadow-gray-800 rounded-full text-red-600/20 text-red-700 "></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-3 border-t px-3 py-[14px]"
-                                    data-testid="proposal-votes-list-item-5">
-                                    <div data-headlessui-state=""><button id="headlessui-popover-button-551"
-                                            type="button" aria-expanded="false" data-headlessui-state=""><a
-                                                href="#/profile/0xFCEa6d3F44C387d756eaD0EdDCEa216E9eB06740"
-                                                class="whitespace-nowrap" tabindex="-1">
-                                                <div
-                                                    class="w-[110px] min-w-[110px] xs:w-[130px] xs:min-w-[130px] text-left flex flex-nowrap items-center space-x-1">
-                                                    <span class="flex shrink-0 items-center justify-center"><img
-                                                            class="rounded-full bg-skin-border object-cover"
-                                                            alt="avatar"
-                                                            style="width: 18px; height: 18px; min-width: 18px; display: none;"><img
-                                                            src="https://cdn.stamp.fyi/avatar/eth:0xFCEa6d3F44C387d756eaD0EdDCEa216E9eB06740?s=36"
-                                                            class="rounded-full bg-skin-border object-cover"
-                                                            alt="avatar"
-                                                            style="width: 18px; height: 18px; min-width: 18px;">
-                                                        <!---->
-                                                    </span><span
-                                                        class="w-full cursor-pointer truncate text-skin-link">0xFCEa...6740</span>
-                                                    <!---->
-                                                </div>
-                                            </a></button>
-                                        <!---->
-                                    </div>
-                                    <div class="flex-auto truncate px-2 text-center text-skin-link">
-                                        <div class="truncate text-end text-skin-link">Love it <i
-                                                class="mdi mdi-heart btn btn-icon text-lg bg-white dark:bg-slate-900 border-0 shadow dark:shadow-gray-800 rounded-full text-red-600/20 text-red-700 "></i>
-                                        </div>
-                                    </div>
-                                </div><a tabindex="0"
-                                    class=" font-semibold hover:text-indigo-600 block rounded-b-none border-t px-4 py-3 text-center md:rounded-b-md"><span>See
-                                        more</span></a>
-                                <!---->
-                            </div>
+                        <div class="border-y border-skin-border bg-skin-block-bg text-base md:rounded-xl md:border"
+                            id="votes_projects">
                         </div>
                     </div>
 
                     <h5
                         class="text-lg font-semibold bg-gray-50 dark:bg-slate-800 shadow dark:shadow-gray-800 rounded-md p-2 text-center mt-8">
-                        Recent post</h5>
-                    <div class="flex items-center mt-8">
-                        <img src="assets/images/blog/06.jpg" class="h-16 rounded-md shadow dark:shadow-gray-800" alt="">
-
-                        <div class="ms-3">
-                            <a href="" class="font-semibold hover:text-indigo-600">Consultant Business</a>
-                            <p class="text-sm text-slate-400">1st May 2022</p>
-                        </div>
+                        Recent projects</h5>
+                    <div id="recent_projects">
                     </div>
-
-                    <div class="flex items-center mt-4">
-                        <img src="assets/images/blog/07.jpg" class="h-16 rounded-md shadow dark:shadow-gray-800" alt="">
-
-                        <div class="ms-3">
-                            <a href="" class="font-semibold hover:text-indigo-600">Grow Your Business</a>
-                            <p class="text-sm text-slate-400">1st May 2022</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center mt-4">
-                        <img src="assets/images/blog/08.jpg" class="h-16 rounded-md shadow dark:shadow-gray-800" alt="">
-
-                        <div class="ms-3">
-                            <a href="" class="font-semibold hover:text-indigo-600">Look On The Glorious Balance</a>
-                            <p class="text-sm text-slate-400">1st May 2022</p>
-                        </div>
-                    </div>
-
                     <h5
                         class="text-lg font-semibold bg-gray-50 dark:bg-slate-800 shadow dark:shadow-gray-800 rounded-md p-2 text-center mt-8">
                         Social sites</h5>
@@ -776,7 +460,11 @@
 <script src="assets/libs/feather-icons/feather.min.js"></script>
 <script src="assets/js/plugins.init.js"></script>
 <script src="assets/js/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="module" src="assets/js/wallet_connect.js"></script>
+<script type="module" src="assets/js/fetch_project_data.js"></script>
+<script type="module" src="assets/js/create_comment.js"></script>
+<script type="module" src="assets/js/love_project.js"></script>
 <!-- JAVASCRIPTS -->
 </body>
 
